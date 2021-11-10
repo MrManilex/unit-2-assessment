@@ -14,11 +14,14 @@
   <% if (!books) { %> 
     <h2>No Books Listed...</h2>
   <% } else { %> 
+    <ul>
     <% books.forEach(book => { %>
-      <ul>
+      <form action="/books/<%= book._id %>?_method=DELETE" method="POST">
         <li><%= book.title %> - <%= book.read ? 'Read' : 'Not Read'%></li>
-      </ul>
-      <% }) %>
+        <button>Delete</button>
+      </form>
+    <% }) %>
+    </ul>
   <% } %> 
 </body>
 </html>

@@ -20,8 +20,16 @@ function create(req, res){
     })
 }
 
+function deleteBook(req, res){
+  Book.findByIdAndDelete(req.params.id)
+    .then(() => {
+      res.redirect('/books')
+    })
+}
+
 export{
   index,
   newBook as new,
-  create
+  create,
+  deleteBook
 }

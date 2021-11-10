@@ -9,6 +9,8 @@ router.get('/new', booksCtrl.new)
 
 router.post('/', booksCtrl.create)
 
+router.delete('/:id', booksCtrl.deleteBook)
+
 export {
   router
 }
