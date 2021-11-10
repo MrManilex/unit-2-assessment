@@ -12,17 +12,17 @@
 
   <a href="/books/new">Add New Book</a>
 
-  <% if (!books) { %> 
-    <h2>No Books Listed...</h2>
-  <% } else { %> 
+  <% if (books.length) { %> 
     <ul>
-    <% books.forEach(book => { %>
-      <form action="/books/<%= book._id %>?_method=DELETE" method="POST">
-        <li><%= book.title %> - <%= book.read ? 'Read' : 'Not Read'%></li>
-        <button>Delete</button>
-      </form>
-    <% }) %>
-    </ul>
+      <% books.forEach(book => { %>
+        <form action="/books/<%= book._id %>?_method=DELETE" method="POST">
+          <li><%= book.title %> - <%= book.read ? 'Read' : 'Not Read'%></li>
+          <button>Delete</button>
+        </form>
+      <% }) %>
+      </ul>
+  <% } else { %> 
+    <h2>No Books Listed...</h2>
   <% } %> 
 </body>
 </html>
