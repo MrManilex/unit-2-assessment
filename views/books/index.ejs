@@ -14,9 +14,14 @@
 
   </form>
 
-  <% if (!books) { %> 
-    <h1>No Books Listed...</h1>
+  <% if (!books === [null]) { %> 
+    <ul>
+      <% books.forEach(book => { %>
+      <li><%= book.name %> - <%= book.read ? 'Read' : 'Not Read'%></li>
+      <% }) %>
+    </ul>
   <% } else { %> 
+    <h2>No Books Listed...</h2>
   <% } %> 
 </body>
 </html>
