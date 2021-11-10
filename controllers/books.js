@@ -8,6 +8,11 @@ function index(req, res){
   })
 }
 
+function newBook(req, res){
+
+}
+
 export{
-  index
+  index,
+  newBook as new
 }
