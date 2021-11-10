@@ -9,7 +9,7 @@ function index(req, res){
 }
 
 function newBook(req, res){
-
+  res.render('books/new')
 }
 
 export{
