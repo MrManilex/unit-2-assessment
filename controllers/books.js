@@ -12,7 +12,16 @@ function newBook(req, res){
   res.render('books/new')
 }
 
+function create(req, res){
+  req.body.read = !!req.body.read
+  Book.create(req.body)
+    .then(book => {
+      res.redirect('/books')
+    })
+}
+
 export{
   index,
-  newBook as new
+  newBook as new,
+  create
 }

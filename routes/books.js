@@ -7,6 +7,8 @@ router.get('/', booksCtrl.index)
 
 router.get('/new', booksCtrl.new)
 
+router.post('/', booksCtrl.create)
+
 export {
   router
 }

@@ -11,14 +11,14 @@
 
   <a href="/books/new">Add New Book</a>
 
-  <% if (!books === [null]) { %> 
-    <ul>
-      <% books.forEach(book => { %>
-      <li><%= book.name %> - <%= book.read ? 'Read' : 'Not Read'%></li>
-      <% }) %>
-    </ul>
-  <% } else { %> 
+  <% if (!books) { %> 
     <h2>No Books Listed...</h2>
+  <% } else { %> 
+    <% books.forEach(book => { %>
+      <ul>
+        <li><%= book.title %> - <%= book.read ? 'Read' : 'Not Read'%></li>
+      </ul>
+      <% }) %>
   <% } %> 
 </body>
 </html>
